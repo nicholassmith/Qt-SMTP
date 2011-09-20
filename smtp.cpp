@@ -28,7 +28,6 @@ Smtp::Smtp(const QString &from, const QStringList &to, const QString &subject, c
     {
         message.append("To: " + to.at(recipCount) + "\n");
     }
-    //message = "To: " + to + "\n";
     message.append("From: " + from + "\n");
     message.append("Subject: " + subject + "\n");
     message.append("Mime-Version: 1.0;\n");
