@@ -1,0 +1,3 @@
+Recommended way to run is: Smtp *stmp = new Smtp(<vars>). If you're 
+using it to send large mails then look at running it in an event loop 
+and connecting the finished() signal to the quit() slot.
