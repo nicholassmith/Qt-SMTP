@@ -3,8 +3,11 @@
 Smtp::Smtp(const QString &from, const QStringList &to, const QString &subject, const QString &body)
 {
     server = ""; //your server name
-    user = ""; //your hashed username see your SMTP server docs
-    pass = ""; //your hashed password see your SMTP server docs
+    user = ""; //your SMTP username
+    pass = ""; //your SMTP password
+
+    user = user.toLocal8Bit().toBase64();
+    pass = pass.toLocal8Bit().toBase64();
 
     x = 1;
     int recipCount = 0;
