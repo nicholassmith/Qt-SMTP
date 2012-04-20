@@ -1,10 +1,10 @@
 #include "smtp.h"
 
-Smtp::Smtp(const QString &from, const QStringList &to, const QString &subject, const QString &body)
+Smtp::Smtp(const QString &serverName, const QString &username, const QString &password, const QString &from, const QStringList &to, const QString &subject, const QString &body)
 {
-    server = ""; //your server name
-    user = ""; //your SMTP username
-    pass = ""; //your SMTP password
+    server = serverName; //your server name
+    user = username; //your SMTP username
+    pass = password; //your SMTP password
 
     user = user.toLocal8Bit().toBase64();
     pass = pass.toLocal8Bit().toBase64();
@@ -58,6 +58,7 @@ Smtp::~Smtp()
     delete t;
     delete socket;
 }
+
 void Smtp::stateChanged(QAbstractSocket::SocketState socketState)
 {
 

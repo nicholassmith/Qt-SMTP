@@ -13,9 +13,11 @@ class Smtp : public QObject
 
 
 public:
-    Smtp( const QString &from, const QStringList &to,
-        const QString &subject, const QString &body );
+    //Smtp( const QString &from, const QStringList &to,
+      //  const QString &subject, const QString &body );
+    Smtp(const QString &serverName, const QString &username, const QString &password, const QString &from, const QStringList &to, const QString &subject, const QString &body);
     ~Smtp();
+    void initalise();
 
 signals:
         void status( const QString &);
